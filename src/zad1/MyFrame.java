@@ -1,5 +1,8 @@
 package zad1;
 
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.web.WebEngine;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,6 +20,11 @@ class MyFrame extends JFrame {
         JTextField cityTxtField = new JTextField();
         cityTxtField.setPreferredSize(new Dimension(200,50));
         JButton submitBtn = new JButton("Zatwierdź");
+        submitBtn.addActionListener(listener->{
+            JFrame temp = new JFrame("sd ad");
+           WebEngine webEngine = new WebEngine();
+
+        });
         submitBtn.setPreferredSize(new Dimension(200,50));
         JLabel cityLabel = new JLabel("Miasto");
         JPanel topPanel = new JPanel();
@@ -42,4 +50,5 @@ class MyFrame extends JFrame {
         setResizable(false);
         setVisible(true);
     }
+
 }
