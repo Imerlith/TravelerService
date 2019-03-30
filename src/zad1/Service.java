@@ -40,7 +40,7 @@ class Service {
               String conditions=jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
               double temp =jsonObject.getJSONObject("main").getDouble("temp");
               temp-=273.15;
-              weather = conditions+"   "+(int)temp;
+              weather = conditions+"   "+(int)temp+" degrees Celsius";
          } catch (IOException e) {
                 e.printStackTrace();
                 weather = "Error while retrieving weather";

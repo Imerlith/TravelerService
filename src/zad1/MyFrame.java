@@ -26,16 +26,16 @@ class MyFrame extends JFrame {
         currencyTextField.setPreferredSize(new Dimension(200,50));
         JButton submitBtn = new JButton("Zatwierdź");
         submitBtn.addActionListener(listener->{
-            Service service = new Service(countryTxtField.getText().toLowerCase().replaceAll("\\s+",""));
+            Service service = new Service(countryTxtField.getText().toLowerCase().replace(" ","%20"));
             String currency = currencyTextField.getText();
-            String city = cityTxtField.getText();
+            String city = cityTxtField.getText().replace(" ","%20");
             JFrame window = new JFrame("Search Result");
             window.setSize(850,700);
             window.setLocationRelativeTo(null);
             JLabel kraj = new JLabel(""+countryTxtField.getText());
-            JLabel miasto = new JLabel(""+city);
+            JLabel miasto = new JLabel(""+cityTxtField.getText());
             JLabel temperatura = new JLabel();
-            JLabel pogoda = new JLabel(service.getWeather(cityTxtField.getText()));
+            JLabel pogoda = new JLabel(service.getWeather(city));
             JLabel waluta = new JLabel(currency);
             JLabel kurs1 = new JLabel("Kurs ECB: "+service.getRateFor(currency));
             JLabel kurs2 = new JLabel("Kurs NBP: "+service.getNBPRate());
